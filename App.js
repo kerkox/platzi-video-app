@@ -13,7 +13,9 @@ import {
   ScrollView,
   View,
   Text,
+  Image,
   StatusBar,
+  Platform,
 } from 'react-native';
 
 import {
@@ -32,15 +34,19 @@ const App: () => React$Node = () => {
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
+              <Text style={styles.sectionTitle}>Jeniffer Rosales</Text>
+              <Text style={styles.sectionTitle}>My Love</Text>
+              <Image 
+                source={require('./assets/amor.jpg')}
+                style={{width:380,height:300}}
+              />
+              <Text style={styles.sectionTitle}>The Family</Text>
+              <Image 
+                source={require('./assets/family.jpg')}
+                style={{width:380,height:300}}
+              />
               <Text style={styles.sectionDescription}>
                 Edit <Text style={styles.highlight}>App.js</Text> to change this
                 screen and then come back to see your edits.
@@ -81,7 +87,9 @@ const styles = StyleSheet.create({
     right: 0,
   },
   body: {
-    backgroundColor: Colors.white,
+    backgroundColor: Platform.select({
+      android: '#fff'
+    }),
   },
   sectionContainer: {
     marginTop: 32,
@@ -112,3 +120,4 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+
