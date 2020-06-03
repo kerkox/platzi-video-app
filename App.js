@@ -13,6 +13,7 @@ import {
 
 import Home from './src/screens/containers/home';
 import Header from './src/sections/components/header';
+import SuggestionsList from './src/videos/containers/suggestions-list'
 
 type Props = {};
 export default class App extends Component<Props>{
@@ -22,10 +23,9 @@ export default class App extends Component<Props>{
         <Header>
           <Text>Hola como estas</Text>
         </Header>
-        <Text>Header</Text>
         <Text>buscador</Text>
         <Text>categorias</Text>
-        <Text>sugerencias</Text>
+        <SuggestionsList/>
       </Home>
     );
 
